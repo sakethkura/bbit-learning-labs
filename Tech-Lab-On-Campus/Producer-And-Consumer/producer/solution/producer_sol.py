@@ -16,9 +16,9 @@ class mqProducer(mqProducerInterface):
 
         self.exchange = self.channel.exchange_declare('Test Exchange')
 
-        self.channel.queue_declare(queue='hello')
+        # self.channel.queue_declare(queue='hello')
 
-        self.channel.queue_bind(exchange="Test Exchange", queue='hello', routing_key=self.routing_key)
+        # self.channel.queue_bind(exchange="Test Exchange", queue='hello', routing_key=self.routing_key)
     
     def publishOrder(self, message):
         self.channel.basic_publish(exchange="Test Exchange", routing_key=self.routing_key, body=message)
